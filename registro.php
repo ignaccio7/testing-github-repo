@@ -78,7 +78,7 @@ include("seguridad/seguridad.php");
 						</label>
 						<div class="col-md-10">
 							<input type="number" name="mesa" class="form-control" placeholder="digite mesa"
-							min="1" required>
+							min="1">
 						</div>
 					</div>
 					<!--			MACRODISTRITO				-->	

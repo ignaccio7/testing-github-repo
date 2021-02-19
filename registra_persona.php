@@ -5,15 +5,22 @@
 
 	$nombre = $_POST['nombre'];
 	$colegio = $_POST['colegio'];
+
 	$mesa = $_POST['mesa'];
 	$macrodistrito = $_POST['macrodistrito'];
 	$zona = $_POST['zona'];
 	$direccion = $_POST['direccion'];
 	$celular = $_POST['celular'];
-
-	$query = "INSERT into persona(nombre,recinto,mesa,macrodistrito,zona,direccion,celular)
+	
+	if ($mesa!="") {
+		$query = "INSERT into persona(nombre,recinto,mesa,macrodistrito,zona,direccion,celular)
 			values('$nombre','$colegio',$mesa,'$macrodistrito','$zona','$direccion',$celular)";
-	$resultado = pg_query($conexion,$query);
+		$resultado = pg_query($conexion,$query);		
+	}else{
+		$query = "INSERT into persona(nombre,recinto,mesa,macrodistrito,zona,direccion,celular)
+			values('$nombre','$colegio',null,'$macrodistrito','$zona','$direccion',$celular)";
+		$resultado = pg_query($conexion,$query);
+	}		
 
 	
 	if($resultado){	?>
@@ -27,4 +34,5 @@
 		location.href='inicio.php';
 	</script>
 	<?php }
+
 ?>
