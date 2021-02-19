@@ -41,7 +41,7 @@
 </style>
 <img src="images/logo.png" alt="" width="80px">
 <h2>Reporte de Datos</h2>
-<table width="720px">
+<table>
     <thead>
 	    <tr>
 	      	<th scope="col" width="20px">#</th>
